@@ -1,0 +1,51 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>Generar un color aleatorio con Javascript</title>
+</head>
+
+<body>
+
+<script>
+
+function aleatorio(inferior,superior){
+    numPosibilidades = superior - inferior
+    aleat = Math.random() * numPosibilidades
+    aleat = Math.floor(aleat)
+    return parseInt(inferior) + aleat
+}
+
+function dame_color_aleatorio(){
+	hexadecimal = new Array("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F")
+	color_aleatorio = "#";
+	for (i=0;i<6;i++){
+		pos = aleatorio(0,hexadecimal.length)
+		color_aleatorio += hexadecimal[pos]
+	}
+	return color_aleatorio
+}
+
+
+	//document.write (dame_color_aleatorio() + '<br>')
+
+	document.write (dame_color_aleatorio())
+
+	document.write ('<div class="1" style="background-color:'+dame_color_aleatorio()+'">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>')
+
+	document.write ('<div class="1" style="background-color:'+dame_color_aleatorio()+'">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>')
+
+
+</script>
+<style media="screen">
+	div {
+		color: #ffffff;
+		text-shadow: 0px 0px 2px #000000;
+		font-weight: bold;
+	}
+</style>
+<div class="1" style="background-color:blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+
+</body>
+</html>
